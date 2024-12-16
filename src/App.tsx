@@ -1,24 +1,16 @@
-import { useState } from 'react'
-import { DimoAuthProvider, useDimoAuthState } from "@dimo-network/login-with-dimo";
+import { DimoAuthProvider } from "@dimo-network/login-with-dimo";
 import { initializeDimoSDK } from "@dimo-network/login-with-dimo";
 import { LoginWithDimo, ShareVehiclesWithDimo } from "@dimo-network/login-with-dimo";
 import './App.css'
 
 // Initialize SDK once, outside of component
 initializeDimoSDK({
-  clientId: "0xeAa35540a94e3ebdf80448Ae7c9dE5F42CaB3481",
-  redirectUri: "http://localhost:8082",
+  clientId: "0x7c6876431D8B1024f5A899A120B5a1Ac1A53c55f",
+  redirectUri: "http://localhost:3000",
 });
 
 // Create a separate component for the authenticated content
 function AuthenticatedContent() {
-  const { 
-    isAuthenticated,
-    getValidJWT,
-    getEmail,
-    email,
-    walletAddress
-  } = useDimoAuthState();
 
   return (
     <>
